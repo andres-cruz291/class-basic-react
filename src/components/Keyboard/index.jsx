@@ -2,15 +2,42 @@ import { Key } from "../Key";
 import { StyledKeyboard } from "./styles";
 
 function Keyboard(props) {
-  const { onClick, letters } = props;
-  const alphabet = Object.keys(letters);
+  const { onClick, palabra } = props;
+  const letters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
   return (
     <StyledKeyboard>
-      {alphabet.map((letter) => (
+      {letters.map((letter) => (
         <Key
           key={letter}
           letter={letter}
-          status={letters[letter]}
+          status={palabra[letter] ? palabra[letter].status : "default"}
           onClick={onClick}
         />
       ))}
